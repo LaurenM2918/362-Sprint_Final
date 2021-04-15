@@ -1,14 +1,14 @@
 table
 {
-        font-family: 'courier new';
-        font-size: 17px;
-        color:black;
-        margin: auto;
-        margin-top: 10px;
-        border-radius: 5px; 
-        align-content: center;
-        border-collapse: collapse;
-        border-width: medium;
+    font-family: 'courier new';
+    font-size: 17px;
+    color:black;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 5px; 
+    align-content: center;
+    border-collapse: collapse;
+    border-width: medium;
 }
 
 

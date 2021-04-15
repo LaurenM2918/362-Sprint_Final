@@ -17,7 +17,7 @@
     {% if item in list %}
       <thead>
           <tr style="text-align: center;">
-            <th>ID</th><th>Tv Title</th><th>Favorites List:</th>
+            <th>ID</th><th>Tv Title</th><th>Favorites List:</th><th>Rating:</th>
           </tr>
       </thead>
     {% endif %}
@@ -39,6 +39,10 @@
             <button type="submit" class="listBtn" value="{{item.0}}" name="delTitle">Delete</button>
           </form>
         </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+        </td>
       </tr>
       {% endif %}
 
@@ -55,6 +59,10 @@
             {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.1}}" name="delTitle">Delete</button>
           </form>
+        </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
         </td>
       </tr>
       {% endif %}
@@ -73,6 +81,10 @@
             <button type="submit" class="listBtn" value="{{item.2}}" name="delTitle">Delete</button>
           </form>
         </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+        </td>
       </tr>
       {% endif %}
 
@@ -89,6 +101,10 @@
             {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.3}}" name="delTitle">Delete</button>
           </form>
+        </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
         </td>
       </tr>
       {% endif %}
@@ -107,6 +123,10 @@
             <button type="submit" class="listBtn" value="{{item.4}}" name="delTitle">Delete</button>
           </form>
         </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+        </td>
       </tr>
       {% endif %}
 
@@ -123,6 +143,10 @@
             {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.5}}" name="delTitle">Delete</button>
           </form>
+        </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
         </td>
       </tr>
       {% endif %}
@@ -141,6 +165,10 @@
             <button type="submit" class="listBtn" value="{{item.6}}" name="delTitle">Delete</button>
           </form>
         </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+        </td>
       </tr>
       {% endif %}
 
@@ -157,6 +185,10 @@
             {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.7}}" name="delTitle">Delete</button>
           </form>
+        </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
         </td>
       </tr>
       {% endif %}
@@ -175,6 +207,10 @@
             <button type="submit" class="listBtn" value="{{item.8}}" name="delTitle">Delete</button>
           </form>
         </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+        </td>
       </tr>
       {% endif %}
 
@@ -192,6 +228,10 @@
             <button type="submit" class="listBtn" value="{{item.9}}" name="delTitle">Delete</button>
           </form>
         </td>
+        <td>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+          <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+        </td>
       </tr>
       {% endif %}
     </tbody>
@@ -202,7 +242,7 @@
   <table id="List2" border="1" class="dataframe" align="center">
     <thead>
       <tr style="text-align: center;">
-        <th>ID</th><th>Movie Title</th><th>Favorites List:</th>
+        <th>ID</th><th>Movie Title</th><th>Favorites List:</th><th>Rating:</th>
       </tr>
     </thead>
     <tbody>
@@ -219,6 +259,10 @@
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{value.0}}" name="delTitle">Delete</button>
             </form>
+          </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
           </td>
       </tr>
       {% endif %}
@@ -237,6 +281,10 @@
               <button type="submit" class="listBtn" value="{{value.1}}" name="delTitle">Delete</button>
             </form>
           </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+          </td>
       </tr>
       {% endif %}
 
@@ -253,6 +301,10 @@
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{value.2}}" name="delTitle">Delete</button>
             </form>
+          </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
           </td>
       </tr>
       {% endif %}
@@ -271,6 +323,10 @@
               <button type="submit" class="listBtn" value="{{value.3}}" name="delTitle">Delete</button>
             </form>
           </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+          </td>
       </tr>
       {% endif %}
 
@@ -287,6 +343,10 @@
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{value.4}}" name="delTitle">Delete</button>
             </form>
+          </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
           </td>
       </tr>
       {% endif %}
@@ -305,6 +365,10 @@
               <button type="submit" class="listBtn" value="{{value.5}}" name="delTitle">Delete</button>
             </form>
           </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+          </td>
       </tr>
       {% endif %}
 
@@ -321,6 +385,10 @@
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{value.6}}" name="delTitle">Delete</button>
             </form>
+          </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
           </td>
       </tr>
       {% endif %}
@@ -339,6 +407,10 @@
               <button type="submit" class="listBtn" value="{{value.7}}" name="delTitle">Delete</button>
             </form>
           </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+          </td>
       </tr>
       {% endif %}
 
@@ -356,6 +428,10 @@
               <button type="submit" class="listBtn" value="{{value.8}}" name="delTitle">Delete</button>
             </form>
           </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
+          </td>
       </tr>
       {% endif %}
 
@@ -372,6 +448,10 @@
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{value.9}}" name="delTitle">Delete</button>
             </form>
+          </td>
+          <td>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">+</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="addTitle">--</button>
           </td>
       </tr>
       {% endif %}
