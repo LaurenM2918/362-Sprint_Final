@@ -1,0 +1,56 @@
+.content {
+    background-color: #c7dfba;
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+.return {
+    border: none;
+    font-size: large;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    background-color: rgb(235, 157, 126);
+    color: white;
+    cursor: pointer;
+}
+
+.listBtn {
+    border: none;
+    font-size: large;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    background-color: rgb(235, 157, 126);
+    color: white;
+    cursor: pointer;
+}
+
+p {
+    background-color: rgb(115, 151, 180); 
+    font-size: 20px;
+    padding: 10px;
+    color:white;
+    border-radius: 10px;
+}
+
+table {
+    background-color: white;
+    border-collapse: collapse;
+    border-width: medium;
+    margin-bottom: 100px;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+input {
+    color: rgb(70, 131, 180);
+}

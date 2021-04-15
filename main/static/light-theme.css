@@ -1,0 +1,96 @@
+.navbar {
+    height: 40px;
+    width: 100%;
+    background-color: #8eb679;
+}
+  
+.navbar-brand {
+    position: relative;
+    color: rgb(87, 87, 87);
+    text-decoration: none;
+    float: left;
+    top: 10px;
+    font-size: 18px;
+}
+
+.navbar-nav {
+    list-style-type: none;
+    z-index: -1;
+}
+  
+.nav-item {
+    padding: 10px;
+    top: 0;
+    display: inline-block;
+}
+  
+.nav-item {
+    position: relative;
+    float: right;
+    right: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-item .nav-link {
+    position: relative;
+    color: rgb(87, 87, 87);
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px;
+}
+
+.nav-item .nav-link:hover {
+    text-decoration: underline;
+}
+  
+.navbar-nav {
+    color: white;
+}
+/* 
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:rgb(70, 131, 180);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a{
+    text-align:center;
+    text-decoration: none;
+    font-size: 24px;
+    color:white;
+    padding-bottom: 15px;
+    display: block;
+}
+
+.sidenav a:hover{
+    color:black;
+} */
+
+.main{
+    background-color: #8eb679;
+    margin-left: 160px;
+    padding: 0px 10px;
+}
+
+
+button {
+    background-color:cadetblue; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+body,p,h1{
+    font-family:'Lucida Sans Unicode';
+    text-align: center;
+    color:black  
+}

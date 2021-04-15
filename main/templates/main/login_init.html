@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+<!- This is the home screen/about us->
+{% block title %}
+Welcome Screen
+{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="about-section">
+  <h1 style="font-family:'Copperplate Gothic Light',fantasy; color:green">Welcome to Couch Potato</h1> <hr>
+   <p1 style="font-family:'Copperplate Gothic Light',fantasy; color:green; font-size: 25px"> About Us: Couch Potato is a television companion application that recommends a user shows
+    and movies based on their watchlist.<br></p1>
+</div>
+
+<h2 style="font-family:'Copperplate Gothic Light',fantasy; color:green"> Team: Bernie Sandisk</h2>
+<p style="font-family:'Copperplate Gothic Light',fantasy; color:green; font-size: 20px"> Members:
+    Allison Atienza, Cesar Martinez Melgoza, Glenn Lusk, Lauren Martinez, Maia Nguyen <br>
+</p>
+{% endblock %}

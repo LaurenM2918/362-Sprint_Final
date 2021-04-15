@@ -1,0 +1,60 @@
+table
+{
+        font-family: 'courier new';
+        font-size: 17px;
+        color:black;
+        margin: auto;
+        margin-top: 10px;
+        border-radius: 5px; 
+        align-content: center;
+        border-collapse: collapse;
+        border-width: medium;
+}
+
+
+tr{
+    text-align: center;
+    background-color:white;
+}
+
+hr{
+    background-color:red;
+}
+
+p,p1{
+    font-family: 'courier new';
+    font-size: 20px;
+    background-color: #c7dfba;
+}
+
+h1{
+    font-family: 'times new roman',serif;
+    font-size: 30px;
+    background-color: #c7dfba;
+}
+
+
+form{
+    
+    font-family: 'courier new';
+    font-size: 17px;
+}
+
+input{
+    font-family: 'courier new';
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+    border:none; 
+    background-color:rgb(235, 157, 126); 
+    color:white; 
+    text-decoration: none
+}
+
+.profile{
+    background-color: #c7dfba;
+    width: 500px;
+    margin: auto;
+    padding-bottom: 5px;
+    border-radius: 5px;  
+}
