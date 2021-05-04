@@ -345,14 +345,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.0 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.0}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.0}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -371,14 +374,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.1 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.1}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.1}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -397,14 +403,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.2 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.2}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.2}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -423,14 +432,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.3 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.3}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.3}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -449,14 +461,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.4 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.4}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.4}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -475,14 +490,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.5 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.5}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.5}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -501,14 +519,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.6 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.6}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.6}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -527,14 +548,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.7 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.7}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.7}}" name="delTitle">Delete</button>
-            </form>    
+            </form>   
+            {% endif %} 
           </td>
           <td>
             <form action="review" method="post">
@@ -553,14 +577,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.8 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.8}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.8}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
@@ -579,14 +606,17 @@ Home
             </form>   
           </td>
           <td>
+            {% if item.9 not in form %}
             <form method="post" action="operation1">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.9}}" name="addTitle">Add</button>
             </form>
+            {% else %}
             <form method="post" action="operation2">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.9}}" name="delTitle">Delete</button>
             </form>    
+            {% endif %}
           </td>
           <td>
             <form action="review" method="post">
