@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+{% block head %}
+  <link rel="stylesheet" href="static/reviews.css">
+{% endblock%}
+
+<div class="content">
+    <body>
+        <br>
+        <br>
+        <h2>Reviews for </h2>
+    </body>
+
+    <form action="home">
+        {% csrf_token %}
+        <input class ="return" type="submit" name="return" value="Return">
+    </form>
+</div>
+{% endblock %}

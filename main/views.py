@@ -83,7 +83,7 @@ def home(response):
     z = list(set(z))
     col_vec = np.array(z, ndmin=2)
 
-    return render(response, "main/home.html", {'Table1': movies, 'Table2': col_vec})
+    return render(response, "main/home.html", {'Table1': movies, 'Table2': col_vec, 'form':user_list})
 
 
 def logout(request, redirect=None, auth=None):
@@ -251,3 +251,8 @@ def operation2(request):
 # if user clicks to delete title, the title will be erased from the user's and UI's list
 # Allow the user to navigate the list by clicking or scrolling
 # Redirect the user to view more recommendations
+
+
+def review(request):
+    res = request.POST['reviews']
+    return render(request, 'main/reviews.html')

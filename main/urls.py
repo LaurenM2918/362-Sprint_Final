@@ -19,6 +19,6 @@ urlpatterns = [
     path("home", views.home, name="return"),
     path("aboutus", views.mainpage, name='return'),
     path("operation1", views.operation1, name="addTitle"),
-    path("operation2", views.operation2, name="delTitle")
-
+    path("operation2", views.operation2, name="delTitle"),
+    path("review", views.review, name="reviews"),
 ]
