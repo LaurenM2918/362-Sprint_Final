@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{{form}}
+{% load static %}
+{% block content %}
+<head>
+<title> Synopsis Page </title>
+<link rel="stylesheet" href="{% static 'synopsis.css' %}" type="text/css">
+</head>
+
+<body>
+<header> Synopsis</header>
+{{Synopsis}}
+<hr>
+<h2> Series Overview </h2>
+<table>
+<tr>
+    <th>Show Name: </th>
+</tr>
+
+<tr>
+    <th>Show Summary: </th>
+</tr>
+<tr>
+    <td>Season: </td>
+    <td>Epsiode: </td>
+    <td>Epsiode Title: </td>
+    <td>Epsiode Summary: </td>
+</tr>
+</table>
+</body>
+
+<form action="home" >
+    {% csrf_token %}
+    <br>
+    <input type="submit" value ="return" name="return" >
+</form>
+
+{% endblock %}
+
+
+
