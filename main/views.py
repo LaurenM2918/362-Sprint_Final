@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
 
 from mysite import settings
-from .models import UserList
-from .forms import UserForm
-from .forms import RegisterForm, LogInForm
+from .models import UserList, ReviewsList
+from .forms import RegisterForm, LogInForm, ReviewsForm
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
@@ -165,7 +164,7 @@ def display(request):
         # 1D vector is transposed into a column vector
         col_vec = np.array(z, ndmin=2)
 
-        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec})
+        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec, 'form':user_list})
 
 
 # # Display User List
@@ -252,7 +251,23 @@ def operation2(request):
 # Allow the user to navigate the list by clicking or scrolling
 # Redirect the user to view more recommendations
 
-
 def review(request):
-    res = request.POST['reviews']
-    return render(request, 'main/reviews.html')
+
+    return render(request, "main/reviews.html")
+
+def createReviewForm(request):
+    # Link this data to Database
+    reviewForm = ReviewsForm(request.POST or None)
+    if request.method == 'POST':
+        if reviewForm.is_valid():
+            reviewForm.save()
+            return redirect("/review") 
+
+    else:
+        reviewForm = ReviewsForm()
+
+    context = {
+        'reviewForm': reviewForm
+    }
+
+    return render(request, "main/reviews.html", context)

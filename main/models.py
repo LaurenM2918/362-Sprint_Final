@@ -35,3 +35,8 @@ class UIList(models.Model):
     title = models.CharField(max_length=255, null=True)
     genre = models.CharField(max_length=255, null=True)
     rating = models.PositiveIntegerField(default=0, validators=[MinValueValidator(1), MaxValueValidator(10)])
+
+class ReviewsList(models.Model):
+    #id = models.AutoField(null=False, primary_key=True)
+    review = models.TextField(blank=True, null=True)
+    

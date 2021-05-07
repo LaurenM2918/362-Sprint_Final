@@ -9,12 +9,19 @@
     <body>
         <br>
         <br>
-        <h2>Reviews for </h2>
+        <h2>Title Name Reviews</h2>
     </body>
+    <br>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {{ reviewForm.as_p }}
+        <input class="btn" type="submit" name="createReviewForm" value="Add Review">
+    </form>
 
     <form action="home">
         {% csrf_token %}
-        <input class ="return" type="submit" name="return" value="Return">
+        <input class="btn" type="submit" name="return" value="Return">
     </form>
 </div>
 {% endblock %}
