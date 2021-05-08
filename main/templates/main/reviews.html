@@ -13,10 +13,10 @@
     </body>
     <br>
     <br>
-    <form method="post">
+    <form action="review" method="post">
         {% csrf_token %}
         {{ reviewForm.as_p }}
-        <input class="btn" type="submit" name="createReviewForm" value="Add Review">
+        <input class="formbtn" type="submit" name="save" value="Add Review">
     </form>
 
     <form action="home">
