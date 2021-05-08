@@ -179,6 +179,8 @@ def display(request):
 from random import randint as r
 
 user_list = []
+liked_list = []
+disliked_list = []
 
 
 def profile(request):
@@ -225,7 +227,11 @@ def profile(request):
     # 1D vector is transposed into a column vector
     col_vec2 = np.array(new_list, ndmin=2)
 
-    return render(request, 'main/user_profile.html', {'form': col_vec, 'rec': col_vec2})
+    col_vec3 = np.array(liked_list, ndmin=2)
+
+    col_vec4 = np.array(disliked_list, ndmin=2)
+
+    return render(request, 'main/user_profile.html', {'form': col_vec, 'rec': col_vec2, 'like': col_vec3, 'dislike': col_vec4})
 
 
 def operation1(request):
@@ -256,3 +262,25 @@ def operation2(request):
 def review(request):
     res = request.POST['reviews']
     return render(request, 'main/reviews.html')
+
+def likeOperation(request):
+    if request.POST['likeTitle']:
+        res = request.POST['likeTitle']
+        if res not in liked_list:
+            liked_list.append(res)
+        if res in disliked_list:
+            idx = disliked_list.index(res)
+            del disliked_list[idx]
+    col_vec3 = np.array(liked_list, ndmin=2)
+    return redirect('home')
+
+def dislikeOperation(request):
+    if request.POST['dislikeTitle']:
+        res = request.POST['dislikeTitle']
+        if res not in disliked_list:
+            disliked_list.append(res)
+        if res in liked_list:
+            idx = liked_list.index(res)
+            del liked_list[idx]
+    col_vec4 = np.array(disliked_list, ndmin=2)
+    return redirect('home')
