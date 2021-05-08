@@ -55,7 +55,7 @@ Home
           {% endif %}     
         </td>
         <td>
-          <form method="post" action="review">
+          <form action="{% url 'review' %}">
             {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.0}}" name="reviews">Reviews</button>
           </form>
@@ -84,7 +84,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.1}}" name="reviews">Reviews</button>
           </form>
@@ -113,7 +113,7 @@ Home
             {% endif %}      
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.2}}" name="reviews">Reviews</button>
           </form>
@@ -142,7 +142,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.3}}" name="reviews">Reviews</button>
           </form>
@@ -171,7 +171,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.4}}" name="reviews">Reviews</button>
           </form>
@@ -200,7 +200,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.5}}" name="reviews">Reviews</button>
           </form>
@@ -229,7 +229,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.6}}" name="reviews">Reviews</button>
           </form>
@@ -258,7 +258,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.7}}" name="reviews">Reviews</button>
           </form>
@@ -287,7 +287,7 @@ Home
             {% endif %}    
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.8}}" name="reviews">Reviews</button>
           </form>
@@ -316,7 +316,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{value.9}}" name="reviews">Reviews</button>
           </form>
@@ -357,7 +357,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.0}}" name="reviews">Reviews</button>
           </form>
@@ -386,7 +386,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.1}}" name="reviews">Reviews</button>
           </form>
@@ -415,7 +415,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.2}}" name="reviews">Reviews</button>
           </form>
@@ -444,7 +444,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.3}}" name="reviews">Reviews</button>
           </form>
@@ -473,7 +473,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.4}}" name="reviews">Reviews</button>
           </form>
@@ -502,7 +502,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.5}}" name="reviews">Reviews</button>
           </form>
@@ -531,7 +531,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.6}}" name="reviews">Reviews</button>
           </form>
@@ -560,7 +560,7 @@ Home
             {% endif %} 
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.7}}" name="reviews">Reviews</button>
           </form>
@@ -589,7 +589,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.8}}" name="reviews">Reviews</button>
           </form>
@@ -618,7 +618,7 @@ Home
             {% endif %}
           </td>
           <td>
-            <form method="post" action="review">
+            <form action="{% url 'review' %}">
               {% csrf_token %}
             <button type="submit" class="listBtn" value="{{item.9}}" name="reviews">Reviews</button>
             </form>

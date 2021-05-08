@@ -21,5 +21,4 @@ urlpatterns = [
     path("operation1", views.operation1, name="addTitle"),
     path("operation2", views.operation2, name="delTitle"),
     path("review", views.review, name="reviews"),
-    path("review", views.createReviewForm, name="createReviewForm"),
 ]

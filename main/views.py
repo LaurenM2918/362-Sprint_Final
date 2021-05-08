@@ -252,22 +252,27 @@ def operation2(request):
 # Redirect the user to view more recommendations
 
 def review(request):
+    if resuest.method == "POST":
+        form = ReviewsForm(request.POST)
+        #receive user input and post to DB
+        if form.is_valid():
+            
 
     return render(request, "main/reviews.html")
 
-def createReviewForm(request):
-    # Link this data to Database
-    reviewForm = ReviewsForm(request.POST or None)
-    if request.method == 'POST':
-        if reviewForm.is_valid():
-            reviewForm.save()
-            return redirect("/review") 
+# def createReviewForm(request):
+#     # Link this data to Database
+#     reviewForm = ReviewsForm(request.POST or None)
+#     if request.method == 'POST':
+#         if reviewForm.is_valid():
+#             reviewForm.save()
+#             return redirect("/review") 
 
-    else:
-        reviewForm = ReviewsForm()
+#     else:
+#         reviewForm = ReviewsForm()
 
-    context = {
-        'reviewForm': reviewForm
-    }
+#     context = {
+#         'reviewForm': reviewForm
+#     }
 
-    return render(request, "main/reviews.html", context)
+#     return render(request, "main/reviews.html", context)
