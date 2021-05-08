@@ -1,19 +1,19 @@
-from django.shortcuts import render, redirect
-
-from mysite import settings
-from .models import UserList, ReviewsList
-from .forms import RegisterForm, LogInForm, ReviewsForm
+import numpy as np
+import pytvmaze
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
-from django.http import HttpResponse, HttpResponseRedirect
-from sklearn.metrics.pairwise import linear_kernel
-from sklearn.feature_extraction.text import TfidfVectorizer
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+
+# from sklearn.metrics.pairwise import linear_kernel
 # from django.shortcuts import HttpResponse
-import pandas as pd
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 from Collab_Filter import data2, indices, cosine_sim, movies_list
-import pytvmaze
-import numpy as np
+from mysite import settings
+from .forms import RegisterForm, LogInForm, ReviewsForm
+from .models import UserList, ReviewsList
+# from .models import Youtube
+from youtube_search import YoutubeSearch
 
 tvm = pytvmaze.TVMaze()
 from tvmaze.api import Api
@@ -23,6 +23,19 @@ api = Api()
 
 def mainpage(response):
     return render(response, "main/login_init.html", {})
+
+
+def synopsis(request):
+    # Receives synopsis title from search engine
+    res = request.POST['title']
+    # Database scraping
+    # video_db = Youtube.objects.all()
+    # Converts dataframe to json object
+    video_out = YoutubeSearch(res, max_results=10).to_json()
+    # Truncates the json to the link of 11 characters
+    video_out = video_out[20:31]
+
+    return render(request, "main/Synopsis.html", {'video': video_out})
 
 
 # Authenticate here
@@ -60,9 +73,7 @@ def register(response):
 
 
 def home(response):
-    # Initialize list to display TV List
-    y2 = []
-    z = []
+
     # Return 2 Values, Movie List, TV List
     # pop = data2.sort_values('popularity', ascending=False)
     pop = movies_list[['title_x']]
@@ -70,19 +81,25 @@ def home(response):
     val = val[['title_x']].to_dict()
     movies = sorted(val.items())
 
-    y = api.show.list()
-    y = y[0:10]
+    # Reduces list to 10
+    out = api.show.list()
+    out = out[0:10]
 
-    for i in range(len(y)):
+    # Initialize temporary list
+    temp = []
+    row_vec = []
+
+    # Insert typecast and truncate
+    for i in range(len(out)):
         # Typecasts the API output into a string
-        y2 = str(y[i])
-        # Truncates the string for HTML output
-        z.append(y2[14:len(y2) - 3])
+        temp = str(out[i])
+        # Parses the string for HTML output
+        row_vec.append(temp[14:len(temp) - 3])
     # Uses the set function to prevent duplicates
-    z = list(set(z))
-    col_vec = np.array(z, ndmin=2)
+    row_vec = list(set(row_vec))
+    col_vec = np.array(row_vec, ndmin=2)
 
-    return render(response, "main/home.html", {'Table1': movies, 'Table2': col_vec, 'form':user_list})
+    return render(response, "main/home.html", {'Table1': movies, 'Table2': col_vec})
 
 
 def logout(request, redirect=None, auth=None):
@@ -94,6 +111,7 @@ def display(request):
     def rec(title, cosine_sim=cosine_sim):
         # Find index of the movie that matches the title
         if title in indices:
+
             idx = indices[title]
             # Get pairwise similarity scores of all movies with that movie
             sim_scores = list(enumerate(cosine_sim[idx]))
@@ -122,27 +140,19 @@ def display(request):
         # Finds shows using TVMaze API
         x = api.search.shows(res)
 
+        # Initialize temporary list
+        temp = []
+        row_vec = []
+
+        # Insert typecast and truncate
         for i in range(len(x)):
             # Typecasts the API output into a string
-            y = str(x[i])
-            # Truncates the string for HTML output
-            z.append(y[14:len(y) - 3])
+            temp = str(x[i])
+            # Parses the string for HTML output
+            row_vec.append(temp[14:len(temp) - 3])
         # Uses the set function to prevent duplicates
-        z = list(set(z))
-
-        # Sprint 4 Goal: Sentimental Analysis Algorithm
-        # Recommend Title based on mood of the movie
-
-        # Fills in gaps left behind from removed duplicates
-        # Condition 1
-        # if len(z) != 10:
-        #     temp = 10 - len(z)
-        # for i in range(temp):
-        #     val.append(val[i])
-
-        # 1D vector is transposed into a column vector
-        col_vec = np.array(z, ndmin=2)
-        # empty_table = len(col_vec) {'check': empty_table}
+        row_vec = list(set(row_vec))
+        col_vec = np.array(row_vec, ndmin=2)
 
         return render(request, 'main/display.html', {'result2': col_vec})
     # If the input works for both algorithms, display 2 tables
@@ -164,7 +174,20 @@ def display(request):
         # 1D vector is transposed into a column vector
         col_vec = np.array(z, ndmin=2)
 
-        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec, 'form':user_list})
+        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec})
+
+
+def review(request):
+    if request.method == "POST":
+        form = ReviewsForm(request.POST)
+        # Receive user input and post to DB
+        if form.is_valid():
+            form.save()
+            return redirect("/home")
+    else:
+        form = ReviewsForm()
+
+    return render(request, "main/reviews.html", {'reviewForm': form})
 
 
 # # Display User List
@@ -186,24 +209,22 @@ def profile(request):
     z = []
     new_list = []
 
-    # # Link this data to Database
+    # Submit added shows to database
+    # Modify list if show is deleted
     # if request.method == "POST":
-    #     form = UserForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
+    #     form2 = UserForm(request.POST)
+    #     if form2.is_valid():
+    #         form2.save()
     # else:
-    #     form = UserForm()
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            title = User.objects.get(title=form.cleaned_data[''])
-            genre = form.cleaned_data['password']
-            # rating =
-            if user:
-                if user.is_active:
-                    auth_login(request, user)
-                    return HttpResponseRedirect(request.GET.get('next',
-                                                                settings.LOGIN_REDIRECT_URL))
+    #     form2 = UserForm()
+
+    # if request.method == 'POST':
+    #
+    #   if myform.is_valid():
+    #       for i in range(len(col_vec)):
+    #           title = myform.cleaned_data[col_vec[i]]
+    #           query = UserList(name=title)
+    #           query.save()
 
     # Return a table with the user's list based on html button (dropdown?)
     col_vec = np.array(user_list, ndmin=2)
@@ -211,7 +232,7 @@ def profile(request):
     # Recommends Shows based on User's List
     temp = 0
     if len(user_list) != 0:
-        temp = r(0, len(user_list)-1)
+        temp = r(0, len(user_list) - 1)
         # Finds shows using TVMaze API
         x = api.search.shows(user_list[temp])
         for i in range(len(x)):
@@ -224,6 +245,9 @@ def profile(request):
     # 1D vector is transposed into a column vector
     col_vec2 = np.array(new_list, ndmin=2)
 
+    # # Calls user form for profile
+    # form2 = UserForm(request.POST)
+
     return render(request, 'main/user_profile.html', {'form': col_vec, 'rec': col_vec2})
 
 
@@ -231,6 +255,10 @@ def operation1(request):
     if request.POST['addTitle']:
         res = request.POST['addTitle']
         if res not in user_list:
+            # saved = UserForm(request.POST)
+            # # Receive user input and post to DB
+            # if saved.is_valid():
+            #     saved.save()
             user_list.append(res)
     col_vec = np.array(user_list, ndmin=2)
     return render(request, 'main/user_profile.html', {'form': col_vec})
@@ -245,29 +273,39 @@ def operation2(request):
     col_vec = np.array(user_list, ndmin=2)
     return render(request, 'main/user_profile.html', {'form': col_vec})
 
+    # if request.method == "POST":
+    #     form = ReviewsForm(request.POST)
+    #     # Receive user input and post to DB
+    #     if form.is_valid():
+    #         form.save()
+    #         return redirect("/home")
+    # else:
+    #     form = ReviewsForm()
+
+# GOALS: Concatenate YT search api
+# Connect DBs
+
+# def display_video(request):
+#     videos = Youtube.objects.all()
+#     context = {'videos': videos}
+#     return render(request, 'main/display.html', context)
 # if user clicks to add title, the title info is added to User List Home
 # That same title is used to update the UI database and update the recommendations
 # if user clicks to delete title, the title will be erased from the user's and UI's list
 # Allow the user to navigate the list by clicking or scrolling
 # Redirect the user to view more recommendations
 
-def review(request):
+# if form2.is_valid():
+#     title = form2.cleaned_data['title']
+#     genre = form2.cleaned_data['']
+#     if form2:
+#         if form2.is_active:
+#             auth_login(request, form2)
+#             return HttpResponseRedirect(request.GET.get('next',
+#                                                         settings.LOGIN_REDIRECT_URL))
 
-    return render(request, "main/reviews.html")
-
-def createReviewForm(request):
-    # Link this data to Database
-    reviewForm = ReviewsForm(request.POST or None)
-    if request.method == 'POST':
-        if reviewForm.is_valid():
-            reviewForm.save()
-            return redirect("/review") 
-
-    else:
-        reviewForm = ReviewsForm()
-
-    context = {
-        'reviewForm': reviewForm
-    }
-
-    return render(request, "main/reviews.html", context)
+# Required installments
+# pip install python-tvmaze
+# pip install numpy scipy scikit-learn
+# pip install django-star-ratings
+# pip install django-cms
