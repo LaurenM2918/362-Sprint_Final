@@ -17,7 +17,7 @@ from .models import ReviewsList
 
 @admin.register(ReviewsList)
 class RequestReviewAdmin(admin.ModelAdmin):
-    list_display = ["review"]
+    list_display = ["review", "title"]
 
 # @admin.register(UserList)
 # class RequestDemoAdmin(admin.ModelAdmin):

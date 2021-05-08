@@ -177,19 +177,6 @@ def display(request):
         return render(request, 'main/display.html', {'result': movies, 'result2': col_vec, 'form': user_list}) 
 
 
-def review(request):
-    if request.method == "POST":
-        form = ReviewsForm(request.POST)
-        # Receive user input and post to DB
-        if form.is_valid():
-            form.save()
-            return redirect("/home")
-    else:
-        form = ReviewsForm()
-
-    return render(request, "main/reviews.html", {'reviewForm': form})
-
-
 # # Display User List
 # def profile_list(list):
 #     user_list = []
@@ -272,6 +259,29 @@ def operation2(request):
             del user_list[idx]
     col_vec = np.array(user_list, ndmin=2)
     return render(request, 'main/user_profile.html', {'form': col_vec})
+
+
+def review(request):
+    if request.GET.get('title'): 
+        res = request.GET.get('title')
+    if request.method == "POST":
+        form = ReviewsForm(request.POST)
+        # Receive user input and post to DB
+        if form.is_valid():
+            form.save()
+            return redirect("/home")
+    else:
+        form = ReviewsForm()
+
+    reviews_list = []
+    reviews_list = ReviewsList.objects.filter(
+        title = res
+    )
+    
+    
+
+    return render(request, "main/reviews.html", {'reviewForm': form, 'title': res, 'reviews_list': reviews_list})
+
 
     # if request.method == "POST":
     #     form = ReviewsForm(request.POST)

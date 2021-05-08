@@ -30,9 +30,11 @@ class ReviewsForm(forms.ModelForm):
     # Defines form attributes
     class Meta:
         model = ReviewsList
-        fields = ["review"]
+        fields = ["review", "title"]
         # Customizes form field labels to display
-        labels = {'review': "Enter Review"}
+        labels = {'review': ""}
+    
+
 
 
 # Log In Form

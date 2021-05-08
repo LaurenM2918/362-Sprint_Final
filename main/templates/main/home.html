@@ -68,7 +68,7 @@ Home
         <td>
           <form action="{% url 'review' %}">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.0}}" name="reviews">Reviews</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="title">Reviews</button>
           </form>
         </td>
       </tr>
@@ -101,7 +101,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.1}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.1}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -134,7 +134,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.2}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.2}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -167,7 +167,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.3}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.3}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -200,7 +200,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.4}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.4}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -233,7 +233,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.5}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.5}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -266,7 +266,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.6}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.6}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -299,7 +299,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.7}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.7}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -332,7 +332,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.8}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.8}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -365,11 +365,11 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{value.9}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{value.9}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
-        </tbody>
+      </tbody>
   </table>
   {% endfor %}
 
@@ -410,7 +410,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.0}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.0}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -443,7 +443,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.1}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.1}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -476,7 +476,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.2}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.2}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -509,7 +509,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.3}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.3}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -542,7 +542,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.4}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.4}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -575,7 +575,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.5}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.5}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -608,7 +608,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.6}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.6}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -641,7 +641,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.7}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.7}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -674,7 +674,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.8}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.8}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>
@@ -707,7 +707,7 @@ Home
           <td>
             <form action="{% url 'review' %}">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.9}}" name="reviews">Reviews</button>
+              <button type="submit" class="listBtn" value="{{item.9}}" name="title">Reviews</button>
             </form>
           </td>
       </tr>

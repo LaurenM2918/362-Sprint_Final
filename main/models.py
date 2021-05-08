@@ -27,6 +27,7 @@ class UserList(models.Model):
 class ReviewsList(models.Model):
     id = models.AutoField(null=False, primary_key=True)
     review = models.TextField(blank=True, null=True)
+    title = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return self.review

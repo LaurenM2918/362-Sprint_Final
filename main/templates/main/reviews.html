@@ -8,16 +8,17 @@
 <div class="content">
     <body>
         <br>
-        <br>
-        <h2>Title Name Reviews</h2>
+        <h2>{{ title }} Reviews</h2>
     </body>
-    <br>
-    <br>
     <form action="review" method="post">
         {% csrf_token %}
         {{ reviewForm.as_p }}
-        <input class="formbtn" type="submit" name="save" value="Add Review">
+        <input class="btn" type="submit" name="save" value="Add Review">
     </form>
+
+    {% for review in reviews_list %}
+        <p class="review">{{ review }}</p>
+    {% endfor %}
 
     <form action="home">
         {% csrf_token %}
