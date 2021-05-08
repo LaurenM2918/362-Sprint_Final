@@ -99,7 +99,7 @@ def home(response):
     row_vec = list(set(row_vec))
     col_vec = np.array(row_vec, ndmin=2)
 
-    return render(response, "main/home.html", {'Table1': movies, 'Table2': col_vec})
+    return render(response, "main/home.html", {'Table1': movies, 'Table2': col_vec, 'form': user_list})
 
 
 def logout(request, redirect=None, auth=None):
@@ -154,7 +154,7 @@ def display(request):
         row_vec = list(set(row_vec))
         col_vec = np.array(row_vec, ndmin=2)
 
-        return render(request, 'main/display.html', {'result2': col_vec})
+        return render(request, 'main/display.html', {'result2': col_vec, 'form': user_list}) 
     # If the input works for both algorithms, display 2 tables
     else:
         val = rec(res)
@@ -174,7 +174,7 @@ def display(request):
         # 1D vector is transposed into a column vector
         col_vec = np.array(z, ndmin=2)
 
-        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec})
+        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec, 'form': user_list}) 
 
 
 def review(request):

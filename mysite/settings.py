@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'register.apps.RegisterConfig',
     'star_ratings',
+    'embed_video',
+    'youtube_api',
 ]
 
 MIDDLEWARE = [
