@@ -1,0 +1,61 @@
+  
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+<title> Synopsis Page </title>
+    {{Hello}}
+<!--<link rel="stylesheet" href="{% static 'synopsis.css' %}" type="text/css">-->
+</head>
+
+<body>
+<header> Synopsis</header>
+<hr>
+<h2> Series Overview </h2>
+<table>
+<tr>
+    <th>Show Name: </th>
+</tr>
+
+<tr>
+    <th>Show Summary: </th>
+</tr>
+<tr>
+    <td>Season: </td>
+    <td>Epsiode: </td>
+    <td>Epsiode Title: </td>
+    <td>Epsiode Summary: </td>
+</tr>
+</table>
+</body>
+
+<iframe width="420" height="345" src="https://www.youtube.com/embed/{{video}}">
+</iframe>
+
+<!--<iframe width="560" height="315" src="https://www.youtube.com/embed/6hB3S9bIaco" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>-->
+
+</iframe>
+
+</body>
+
+<!--{% load embed_video_tags %}-->
+<!--{% video item.video 'small' %}-->
+
+<!--{% if videos %}-->
+
+<!--    {% for v in videos %}-->
+<!--    {{ v.video }}-->
+<!--    {% endfor %}-->
+
+<!--    {% else %}-->
+<!--    <p>No videos yet</p>-->
+
+<!--{% endif %}-->
+
+<form action="home">
+    {% csrf_token %}
+    <br>
+    <input type="submit" value ="return" name="return" >
+</form>
+
+{% endblock %}
