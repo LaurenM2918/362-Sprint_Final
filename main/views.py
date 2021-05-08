@@ -25,6 +25,8 @@ api = Api()
 def mainpage(response):
     return render(response, "main/login_init.html", {})
 
+def synopsis(request):
+    return render(request, "main/Synopsis.html", {'Hello': 'Success'})
 
 # Authenticate here
 def login(request):
