@@ -18,6 +18,7 @@ Home
       <input class="profileBtn" type="submit" name="profile" value="Profile Page">
     </form>
     <p>Click On A Movie Title Or Enter A Title Into The Search Bar To See Recommended Titles</p>
+    
     <form action="display" method="post">
       {% csrf_token %}
       <input class="searchBox" type="text" name="title" placeholder="Enter Title">

@@ -10,11 +10,14 @@
         <br>
         <h2>{{ title }} Reviews</h2>
     </body>
-    <form action="review" method="post">
+    <form action="review" method="post" id="reviewForm">
         {% csrf_token %}
-        {{ reviewForm.as_p }}
+        <!-- {{ reviewForm.as_p }} -->
+        <label style="display: none;"for="title">Title: </label>
+        <input style="display: none;"id="title" type="text" name="title" value="{{ title }}">
         <input class="btn" type="submit" name="save" value="Add Review">
     </form>
+    <textarea form ="reviewForm" name ="review"></textarea>
 
     {% for review in reviews_list %}
         <p class="review">{{ review }}</p>
