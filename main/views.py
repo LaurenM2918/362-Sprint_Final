@@ -26,7 +26,21 @@ def mainpage(response):
     return render(response, "main/login_init.html", {})
 
 def synopsis(request):
-    return render(request, "main/Synopsis.html", {'Hello': 'Success'})
+    res = request.POST['title']
+    x = api.search.single_show(res)
+    name = x.name
+    summary = x.summary
+    id = x.id
+    show = tvm.get_show(id, embed='episodes')
+    for episode in show.episodes:
+        if (episode.season_number == 1):
+            season = episode.season_number
+        if (episode.episode_number == 1):
+            ep_num = episode.episode_number
+            ep_title = episode.title
+            ep_sum = episode.summary
+    return render(request, "main/Synopsis.html", {'Name': name, 'Sum': summary, 'season': season,
+                                                  'episode': ep_num, 'title': ep_title, 'ep_sum': ep_sum})
 
 # Authenticate here
 def login(request):
