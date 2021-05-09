@@ -1,4 +1,24 @@
-.return {
+.content {
+    background-color: #c7dfba;
+    width: 850px;
+    margin: auto;
+    margin-top: 50px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 500px; 
+    height: 150px; 
+    padding: 12px 20px; 
+    border: 2px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #f8f8f8; 
+    resize: none; 
+    overflow-y: scroll;
+}
+
+.btn {
     border: none;
     font-size: large;
     padding-top: 5px;
@@ -8,3 +28,40 @@
     color: white;
     cursor: pointer;
 }
+
+.reviewbox {
+  width: 500px;
+  height: 100px;
+  overflow-wrap: break-word;
+}
+
+.review {
+    border-radius: 5px;
+    width: 500px;
+    margin: auto;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

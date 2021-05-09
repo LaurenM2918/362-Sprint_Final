@@ -8,13 +8,25 @@
 <div class="content">
     <body>
         <br>
-        <br>
-        <h2>Reviews for </h2>
+        <h2>{{ title }} Reviews</h2>
     </body>
+    <form action="review" method="post" id="reviewForm">
+        {% csrf_token %}
+        <!-- {{ reviewForm.as_p }} -->
+        <label style="display: none;"for="title">Title: </label>
+        <input style="display: none;"id="title" type="text" name="title" value="{{ title }}">
+        <input style="margin-top: 175px;" class="btn" type="submit" name="save" value="Add Review">
+    </form>
+    <textarea style="margin-top: -220px;"form ="reviewForm" name ="review"></textarea>
+
+    {% for review in reviews_list %}
+        <p class="review">{{ review }}</p>
+    {% endfor %}
 
     <form action="home">
         {% csrf_token %}
-        <input class ="return" type="submit" name="return" value="Return">
+        <br>
+        <input class="btn" type="submit" name="return" value="Return">
     </form>
 </div>
 {% endblock %}

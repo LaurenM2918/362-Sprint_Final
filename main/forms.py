@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserList
+from .models import UserList, ReviewsList
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -18,6 +18,14 @@ class UserForm(forms.ModelForm):
         # Customizes form field labels to display
         labels = {'title': "Title", 'genre': "Genre", 'rating': "Rating"}
 
+# Review Form
+class ReviewsForm(forms.ModelForm):
+    # Defines form attributes
+    class Meta:
+        model = ReviewsList
+        fields = ["review", "title"]
+        # Customizes form field labels to display
+        labels = {'review': ""}
 
 # Log In Form
 class LogInForm(forms.Form):

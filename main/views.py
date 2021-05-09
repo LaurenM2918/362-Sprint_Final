@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 
 from mysite import settings
-from .models import UserList
+from .models import UserList, ReviewsList
 from .forms import UserForm
-from .forms import RegisterForm, LogInForm
+from .forms import RegisterForm, LogInForm, ReviewsForm
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
@@ -147,7 +147,7 @@ def display(request):
         col_vec = np.array(z, ndmin=2)
         # empty_table = len(col_vec) {'check': empty_table}
 
-        return render(request, 'main/display.html', {'result2': col_vec})
+        return render(request, 'main/display.html', {'result2': col_vec, 'form': user_list})
     # If the input works for both algorithms, display 2 tables
     else:
         val = rec(res)
@@ -167,7 +167,7 @@ def display(request):
         # 1D vector is transposed into a column vector
         col_vec = np.array(z, ndmin=2)
 
-        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec})
+        return render(request, 'main/display.html', {'result': movies, 'result2': col_vec, 'form': user_list})
 
 
 # # Display User List
@@ -256,5 +256,21 @@ def operation2(request):
 
 
 def review(request):
-    res = request.POST['reviews']
-    return render(request, 'main/reviews.html')
+    if request.GET.get('title'): 
+        res = request.GET.get('title')
+    if request.method == "POST":
+        form = ReviewsForm(request.POST)
+        # Receive user input and post to DB
+        if form.is_valid():
+            form.save()
+            return redirect("/home")
+    else:
+        form = ReviewsForm()
+
+    reviews_list = []
+    reviews_list = ReviewsList.objects.filter(
+        title = res
+    )
+
+    return render(request, "main/reviews.html", {'reviewForm': form, 'title': res, 'reviews_list': reviews_list})
+
