@@ -93,3 +93,14 @@ p {
     color:#575757;
     border-radius: 5px;
 }
+
+.synopsisBtn {
+    border: none;
+    font-size: large;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    background-color:rgb(235, 157, 126);
+    color: white;
+    cursor: pointer;
+}
