@@ -1,3 +1,4 @@
+
 {% extends 'main/base.html' %}
 {{form}}
 {% load static %}
@@ -9,23 +10,36 @@
 
 <body>
 <header> Synopsis</header>
-{{Synopsis}}
 <hr>
 <h2> Series Overview </h2>
+
+<body>
+    <h>Show Name: {{Name}}</h>
+    <p> Show Summary: {{Sum}} </p>
+</body>
+
 <table>
 <tr>
-    <th>Show Name: </th>
+    <td>Season: </td>
+    <td>Episode: </td>
+    <td>Episode Title: </td>
+    <td>Episode Summary: </td>
+</tr>
+<tr>
+    <td>
+        {{season}}
+    </td>
+    <td>
+        {{episode}}
+    </td>
+    <td>
+        {{title}}
+    </td>
+    <td>
+        {{ep_sum}}
+    </td>
 </tr>
 
-<tr>
-    <th>Show Summary: </th>
-</tr>
-<tr>
-    <td>Season: </td>
-    <td>Epsiode: </td>
-    <td>Epsiode Title: </td>
-    <td>Epsiode Summary: </td>
-</tr>
 </table>
 </body>
 
@@ -36,6 +50,10 @@
 </form>
 
 {% endblock %}
+
+
+
+
 
 
 
