@@ -33,9 +33,8 @@ def synopsis(request):
     id = x.id
     show = tvm.get_show(id, embed='episodes')
     for episode in show.episodes:
-        if (episode.season_number == 1):
+        if (episode.season_number == 1 and episode.episode_number == 1):
             season = episode.season_number
-        if (episode.episode_number == 1):
             ep_num = episode.episode_number
             ep_title = episode.title
             ep_sum = episode.summary
