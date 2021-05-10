@@ -22,4 +22,6 @@ urlpatterns = [
     path("operation2", views.operation2, name="delTitle"),
     path("review", views.review, name="review"),
     path("synopsis", views.synopsis, name="synopsis")
+    path("likeTitle", views.likeOperation, name='likeTitle'),
+    path("dislikeTitle", views.dislikeOperation, name='dislikeTitle'),
 ]
