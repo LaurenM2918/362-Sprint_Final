@@ -75,7 +75,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.0}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.0}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -114,7 +114,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.1}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.1}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -153,7 +153,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.2}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.2}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -192,7 +192,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.3}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.3}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -231,7 +231,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.4}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.4}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -270,7 +270,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.5}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.5}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -309,7 +309,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.6}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.6}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -348,7 +348,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.7}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.7}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -387,7 +387,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.8}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.8}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -426,7 +426,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{value.9}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{value.9}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -477,7 +477,7 @@ Home
           </form>
           <form method="post" action="dislikeTitle">
             {% csrf_token %}
-            <button type="submit" class="listBtn" value="{{item.0}}" name="dislikeTitle">Disike</button>
+            <button type="submit" class="listBtn" value="{{item.0}}" name="dislikeTitle">Dislike</button>
           </form>
         </td>
       </tr>
@@ -516,7 +516,7 @@ Home
             </form>
             <form method="post" action="dislikeTitle">
               {% csrf_token %}
-              <button type="submit" class="listBtn" value="{{item.1}}" name="dislikeTitle">Disike</button>
+              <button type="submit" class="listBtn" value="{{item.1}}" name="dislikeTitle">Dislike</button>
             </form>
           </td>
       </tr>
@@ -548,6 +548,16 @@ Home
               <button type="submit" class="listBtn" value="{{item.2}}" name="title">Reviews</button>
             </form>
           </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.2}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.2}}" name="dislikeTitle">Dislike</button>
+            </form>
+          </td>
       </tr>
         <tr>
           <td> 4 </td>
@@ -575,6 +585,16 @@ Home
             <form action="{% url 'review' %}">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.3}}" name="title">Reviews</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.3}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.3}}" name="dislikeTitle">Dislike</button>
             </form>
           </td>
       </tr>
@@ -606,6 +626,16 @@ Home
               <button type="submit" class="listBtn" value="{{item.4}}" name="title">Reviews</button>
             </form>
           </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.4}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.4}}" name="dislikeTitle">Dislike</button>
+            </form>
+          </td>
       </tr>
         <tr>
           <td> 6 </td>
@@ -633,6 +663,16 @@ Home
             <form action="{% url 'review' %}">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.5}}" name="title">Reviews</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.5}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.5}}" name="dislikeTitle">Dislike</button>
             </form>
           </td>
       </tr>
@@ -664,6 +704,16 @@ Home
               <button type="submit" class="listBtn" value="{{item.6}}" name="title">Reviews</button>
             </form>
           </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.6}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.6}}" name="dislikeTitle">Dislike</button>
+            </form>
+          </td>
       </tr>
         <tr>
           <td> 8 </td>
@@ -691,6 +741,16 @@ Home
             <form action="{% url 'review' %}">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.7}}" name="title">Reviews</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.7}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.7}}" name="dislikeTitle">Dislike</button>
             </form>
           </td>
       </tr>
@@ -722,6 +782,16 @@ Home
               <button type="submit" class="listBtn" value="{{item.8}}" name="title">Reviews</button>
             </form>
           </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.8}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.8}}" name="dislikeTitle">Dislike</button>
+            </form>
+          </td>
       </tr>
         <tr>
           <td> 10 </td>
@@ -749,6 +819,16 @@ Home
             <form action="{% url 'review' %}">
               {% csrf_token %}
               <button type="submit" class="listBtn" value="{{item.9}}" name="title">Reviews</button>
+            </form>
+          </td>
+          <td>
+            <form method="post" action="likeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.9}}" name="likeTitle">Like</button>
+            </form>
+            <form method="post" action="dislikeTitle">
+              {% csrf_token %}
+              <button type="submit" class="listBtn" value="{{item.9}}" name="dislikeTitle">Dislike</button>
             </form>
           </td>
       </tr>
